@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+<<<<<<< HEAD
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -66,15 +67,21 @@
 </body>
 </html><!DOCTYPE html>
 <html lang="pt-BR">
+=======
+>>>>>>> 26fd5518df3a6e2b48ab4ae32da37f43adade4b7
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor de Projeto Studio AI para Web App</title>
     
     <!-- INÍCIO DAS ADIÇÕES PWA (MANDATÓRIO) -->
+<<<<<<< HEAD
     <!-- Esta linha liga o HTML ao seu arquivo de configurações do aplicativo (manifest.json) -->
     <link rel="manifest" href="/manifest.json">
     <!-- Meta tags para melhorar a experiência em iOS/Safari e dar aparência de app -->
+=======
+    <link rel="manifest" href="/manifest.json">
+>>>>>>> 26fd5518df3a6e2b48ab4ae32da37f43adade4b7
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <!-- FIM DAS ADIÇÕES PWA -->
@@ -82,12 +89,20 @@
     <!-- Carrega o Tailwind CSS para estilização moderna e responsiva -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+<<<<<<< HEAD
         /* Estilização personalizada para a fonte Inter */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f3f4f6; /* Cinza claro de fundo */
         }
         /* Estilo para a área de resultado, simulando um cartão */
+=======
+        /* Estilização personalizada */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+>>>>>>> 26fd5518df3a6e2b48ab4ae32da37f43adade4b7
         #result-container {
             min-height: 10rem;
         }
@@ -113,9 +128,21 @@
             Meu Projeto Gemini Web App
         </h1>
         <p class="text-gray-500 mb-8">
+<<<<<<< HEAD
             Converta seu prompt do Google Studio AI em um aplicativo funcional.
         </p>
 
+=======
+            Converta seu prompt do Google Studio AI em um aplicativo funcional e salve seu histórico.
+        </p>
+
+        <!-- Informação do Usuário e Status de Conexão -->
+        <div id="user-info" class="text-sm text-gray-500 mb-4 p-2 bg-gray-50 rounded-lg">
+            Status: <span id="auth-status" class="font-semibold text-red-500">Conectando...</span> | 
+            ID do Usuário (para suporte): <span id="user-id">Aguardando login</span>
+        </div>
+
+>>>>>>> 26fd5518df3a6e2b48ab4ae32da37f43adade4b7
         <!-- Área de Input do Usuário -->
         <div class="mb-6">
             <label for="prompt-input" class="block text-lg font-medium text-gray-700 mb-2">
@@ -124,7 +151,11 @@
             <textarea id="prompt-input"
                 class="w-full p-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gemini-blue focus:border-gemini-blue transition duration-150 shadow-inner resize-y"
                 rows="6"
+<<<<<<< HEAD
                 placeholder="Ex: Crie um plano de treino de 7 dias para corrida de 5km, otimizado com dados recentes de nutrição.">
+=======
+                placeholder="Ex: Crie um plano de treino de 7 dias para corrida de 5km...">
+>>>>>>> 26fd5518df3a6e2b48ab4ae32da37f43adade4b7
             </textarea>
         </div>
 
@@ -142,16 +173,39 @@
 
         <!-- Área de Resultado (Resposta da IA) -->
         <h2 class="text-2xl font-bold text-gray-800 mb-4 pt-4 border-t border-gray-200">
+<<<<<<< HEAD
             Resultado Gerado
+=======
+            Resposta Atual
+>>>>>>> 26fd5518df3a6e2b48ab4ae32da37f43adade4b7
         </h2>
         <div id="result-container"
              class="bg-gemini-light p-6 rounded-xl border border-blue-200 text-gray-700 whitespace-pre-wrap shadow-inner overflow-x-auto">
             <p id="result-text" class="italic text-gray-500">
+<<<<<<< HEAD
                 Aguardando seu prompt... Clique em 'Gerar Conteúdo' para começar.
             </p>
         </div>
 
         <!-- Área para Fontes/Citações -->
+=======
+                Aguardando seu prompt...
+            </p>
+        </div>
+
+        <!-- Área de Histórico (Nova Funcionalidade) -->
+        <h2 class="text-2xl font-bold text-gray-800 mb-4 pt-8 border-t border-gray-200 mt-8">
+            Histórico Salvo (Firestore)
+        </h2>
+        <div id="history-container" class="space-y-4">
+            <p id="history-status" class="italic text-gray-500">
+                Carregando histórico...
+            </p>
+            <!-- Histórico será inserido aqui -->
+        </div>
+
+        <!-- Área para Fontes/Citações (Opcional) -->
+>>>>>>> 26fd5518df3a6e2b48ab4ae32da37f43adade4b7
         <div id="sources-area" class="mt-6 hidden">
             <h3 class="text-xl font-semibold text-gray-700 mb-2">
                 Fontes Utilizadas (Pesquisa Google)
@@ -162,6 +216,7 @@
         </div>
     </div>
 
+<<<<<<< HEAD
     <script>
         // Variáveis globais para os elementos do DOM
         const promptInput = document.getElementById('prompt-input');
@@ -241,3 +296,17 @@
                             sources.forEach(source => {
                                 const li = document.createElement('li');
                                 li.innerHTML = `<a href="${source.uri}" target="_blank" class="text-gemini-blue hover:underline rounded
+=======
+    <script type="module">
+        // Importações obrigatórias do Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, addDoc, onSnapshot, collection, query, orderBy, serverTimestamp, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        
+        // Ativar log de debug do Firestore (Útil para desenvolvimento)
+        setLogLevel('debug');
+
+        // --- Variáveis Globais da Plataforma ---
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const
+>>>>>>> 26fd5518df3a6e2b48ab4ae32da37f43adade4b7
