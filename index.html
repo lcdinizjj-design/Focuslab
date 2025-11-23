@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO & Impact Meta Tags -->
+    <title>Focuslab | Domine sua Rotina e Foco</title>
+    <meta name="description" content="Um sistema brutalmente simples para eliminar distrações, construir disciplina inabalável e executar suas metas em 30 dias. Junte-se a +10.000 Membros." />
+    <meta name="theme-color" content="#0c0a09" />
+    <meta property="og:title" content="Focuslab - O Fim da Procrastinação" />
+    <meta property="og:description" content="Recupere seu foco. Entre no modo profundo. 30 dias de desafios para mudar sua mente." />
+    <meta property="og:type" content="website" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Custom Scrollbar for Lab Feel */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1c1917;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1e3a8a; /* blue-900 */
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #1d4ed8; /* blue-700 */
+      }
+      body {
+        background-color: #0c0a09; /* stone-950 */
+        color: #e7e5e4; /* stone-200 */
+      }
+      /* Animation Utilities */
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.6s ease-out forwards;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Projeto Studio AI para Web App</title>
+    
+    <!-- INÍCIO DAS ADIÇÕES PWA (MANDATÓRIO) -->
+    <!-- Esta linha liga o HTML ao seu arquivo de configurações do aplicativo (manifest.json) -->
+    <link rel="manifest" href="/manifest.json">
+    <!-- Meta tags para melhorar a experiência em iOS/Safari e dar aparência de app -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- FIM DAS ADIÇÕES PWA -->
+
+    <!-- Carrega o Tailwind CSS para estilização moderna e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Estilização personalizada para a fonte Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Cinza claro de fundo */
+        }
+        /* Estilo para a área de resultado, simulando um cartão */
+        #result-container {
+            min-height: 10rem;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'gemini-blue': '#1a73e8',
+                        'gemini-light': '#e8f0fe',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="p-4 sm:p-8">
+
+    <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-2xl p-6 md:p-10">
+        <!-- Título da Aplicação -->
+        <h1 class="text-3xl font-bold text-gray-900 mb-2">
+            Meu Projeto Gemini Web App
+        </h1>
+        <p class="text-gray-500 mb-8">
+            Converta seu prompt do Google Studio AI em um aplicativo funcional.
+        </p>
+
+        <!-- Área de Input do Usuário -->
+        <div class="mb-6">
+            <label for="prompt-input" class="block text-lg font-medium text-gray-700 mb-2">
+                Seu Prompt:
+            </label>
+            <textarea id="prompt-input"
+                class="w-full p-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gemini-blue focus:border-gemini-blue transition duration-150 shadow-inner resize-y"
+                rows="6"
+                placeholder="Ex: Crie um plano de treino de 7 dias para corrida de 5km, otimizado com dados recentes de nutrição.">
+            </textarea>
+        </div>
+
+        <!-- Botão de Geração -->
+        <div class="flex justify-end mb-8">
+            <button id="generate-button"
+                class="px-6 py-3 bg-gemini-blue text-white font-semibold rounded-xl shadow-md hover:bg-blue-600 transition duration-150 ease-in-out transform hover:scale-[1.01] disabled:opacity-50 disabled:cursor-not-allowed flex items-center">
+                <span id="button-text">Gerar Conteúdo</span>
+                <svg id="loading-spinner" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Área de Resultado (Resposta da IA) -->
+        <h2 class="text-2xl font-bold text-gray-800 mb-4 pt-4 border-t border-gray-200">
+            Resultado Gerado
+        </h2>
+        <div id="result-container"
+             class="bg-gemini-light p-6 rounded-xl border border-blue-200 text-gray-700 whitespace-pre-wrap shadow-inner overflow-x-auto">
+            <p id="result-text" class="italic text-gray-500">
+                Aguardando seu prompt... Clique em 'Gerar Conteúdo' para começar.
+            </p>
+        </div>
+
+        <!-- Área para Fontes/Citações -->
+        <div id="sources-area" class="mt-6 hidden">
+            <h3 class="text-xl font-semibold text-gray-700 mb-2">
+                Fontes Utilizadas (Pesquisa Google)
+            </h3>
+            <ul id="sources-list" class="list-none space-y-1 text-sm text-gray-600 pl-0">
+                <!-- As fontes serão inseridas aqui -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Variáveis globais para os elementos do DOM
+        const promptInput = document.getElementById('prompt-input');
+        const generateButton = document.getElementById('generate-button');
+        const buttonText = document.getElementById('button-text');
+        const loadingSpinner = document.getElementById('loading-spinner');
+        const resultText = document.getElementById('result-text');
+        const sourcesArea = document.getElementById('sources-area');
+        const sourcesList = document.getElementById('sources-list');
+
+        // Configuração da API Key (deve ser deixada vazia, a plataforma injeta a chave)
+        const apiKey = "";
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+        // Função utilitária para conversão de texto para HTML (simples)
+        function formatText(text) {
+            // Converte Markdown básico (como negrito) e quebras de linha para HTML
+            let html = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            html = html.replace(/\n/g, '<br>');
+            return html;
+        }
+
+        // Função principal para chamar a API
+        async function generateContent(userQuery) {
+            // Configura o estado de carregamento
+            generateButton.disabled = true;
+            buttonText.textContent = "Gerando...";
+            loadingSpinner.classList.remove('hidden');
+            resultText.innerHTML = '<p class="text-center text-gray-500">Gerando resposta... Aguarde.</p>';
+            sourcesArea.classList.add('hidden');
+            sourcesList.innerHTML = '';
+
+            // Configuração do prompt do sistema (opcional, para definir o persona)
+            const systemPrompt = "Você é um assistente de IA prestativo e criativo. Formate suas respostas de forma clara, usando Markdown para cabeçalhos e listas, se apropriado.";
+
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                // Habilita o Google Search para respostas baseadas em dados atuais (grounding)
+                tools: [{ "google_search": {} }],
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                },
+            };
+
+            let response;
+            try {
+                // Tenta a chamada da API
+                response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Erro HTTP: ${response.status}`);
+                }
+
+                const result = await response.json();
+                const candidate = result.candidates?.[0];
+
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    const generatedText = candidate.content.parts[0].text;
+                    resultText.innerHTML = formatText(generatedText); // Exibe o texto formatado
+
+                    // Extrai e exibe as fontes de pesquisa (citações)
+                    const groundingMetadata = candidate.groundingMetadata;
+                    if (groundingMetadata && groundingMetadata.groundingAttributions) {
+                        const sources = groundingMetadata.groundingAttributions
+                            .map(attribution => ({
+                                uri: attribution.web?.uri,
+                                title: attribution.web?.title,
+                            }))
+                            .filter(source => source.uri && source.title);
+
+                        if (sources.length > 0) {
+                            sourcesArea.classList.remove('hidden');
+                            sources.forEach(source => {
+                                const li = document.createElement('li');
+                                li.innerHTML = `<a href="${source.uri}" target="_blank" class="text-gemini-blue hover:underline rounded
