@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Nome do cache para controle de versão
 const CACHE_NAME = 'gemini-pwa-cache-v1';
 
@@ -54,7 +53,7 @@ self.addEventListener('activate', event => {
       );
     })
   );
-=======
+
 // Nome do cache para controle de versão
 const CACHE_NAME = 'gemini-pwa-cache-v1';
 
