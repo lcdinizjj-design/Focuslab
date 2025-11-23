@@ -1,112 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- SEO & Impact Meta Tags -->
-    <title>Focuslab | Domine sua Rotina e Foco</title>
-    <meta name="description" content="Um sistema brutalmente simples para eliminar distrações, construir disciplina inabalável e executar suas metas em 30 dias. Junte-se a +10.000 Membros." />
-    <meta name="theme-color" content="#0c0a09" />
-    <meta property="og:title" content="Focuslab - O Fim da Procrastinação" />
-    <meta property="og:description" content="Recupere seu foco. Entre no modo profundo. 30 dias de desafios para mudar sua mente." />
-    <meta property="og:type" content="website" />
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      /* Custom Scrollbar for Lab Feel */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #1c1917;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #1e3a8a; /* blue-900 */
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #1d4ed8; /* blue-700 */
-      }
-      body {
-        background-color: #0c0a09; /* stone-950 */
-        color: #e7e5e4; /* stone-200 */
-      }
-      /* Animation Utilities */
-      @keyframes fade-in {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      .animate-fade-in {
-        animation: fade-in 0.6s ease-out forwards;
-      }
-      .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-      }
-      .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
-  <body>
-    <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
-</html><!DOCTYPE html>
-<html lang="pt-BR">
+    <title>Focuslab | Web App com Gemini e Firestore</title>
 
->>>>>>> 26fd5518df3a6e2b48ab4ae32da37f43adade4b7
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor de Projeto Studio AI para Web App</title>
-    
-    <!-- INÍCIO DAS ADIÇÕES PWA (MANDATÓRIO) -->
-
-    <!-- Esta linha liga o HTML ao seu arquivo de configurações do aplicativo (manifest.json) -->
+    <!-- PWA Setup -->
     <link rel="manifest" href="/manifest.json">
-    <!-- Meta tags para melhorar a experiência em iOS/Safari e dar aparência de app -->
-
-    <link rel="manifest" href="/manifest.json">
->>>>>>> 26fd5518df3a6e2b48ab4ae32da37f43adade4b7
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <!-- FIM DAS ADIÇÕES PWA -->
 
     <!-- Carrega o Tailwind CSS para estilização moderna e responsiva -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-
-        /* Estilização personalizada para a fonte Inter */
+        /* Estilização para a fonte Inter */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f3f4f6; /* Cinza claro de fundo */
         }
-        /* Estilo para a área de resultado, simulando um cartão */
-
-        /* Estilização personalizada */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-        }
->>>>>>> 26fd5518df3a6e2b48ab4ae32da37f43adade4b7
-        #result-container {
-            min-height: 10rem;
-        }
-    </style>
-    <script>
+        /* Estilos de cor personalizados para o Tailwind */
         tailwind.config = {
             theme: {
                 extend: {
@@ -117,31 +29,57 @@
                 }
             }
         }
-    </script>
+        /* Custom Scrollbar for Lab Feel */
+        ::-webkit-scrollbar {
+          width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+          background: #f3f4f6;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: #1a73e8; /* gemini-blue */
+          border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+          background: #1d4ed8;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Estilo para a área de resultado, simulando um cartão */
+        #result-container {
+            min-height: 10rem;
+        }
+        .history-item {
+            cursor: pointer;
+            transition: background-color 0.15s;
+        }
+        .history-item:hover {
+            background-color: #f0f4ff; /* gemini-light hover */
+        }
+    </style>
 </head>
 <body class="p-4 sm:p-8">
 
     <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-2xl p-6 md:p-10">
         <!-- Título da Aplicação -->
         <h1 class="text-3xl font-bold text-gray-900 mb-2">
-            Meu Projeto Gemini Web App
+            Focuslab | AI de Foco
         </h1>
         <p class="text-gray-500 mb-8">
-
-            Converta seu prompt do Google Studio AI em um aplicativo funcional.
-        </p>
-
-
             Converta seu prompt do Google Studio AI em um aplicativo funcional e salve seu histórico.
         </p>
 
         <!-- Informação do Usuário e Status de Conexão -->
         <div id="user-info" class="text-sm text-gray-500 mb-4 p-2 bg-gray-50 rounded-lg">
             Status: <span id="auth-status" class="font-semibold text-red-500">Conectando...</span> | 
-            ID do Usuário (para suporte): <span id="user-id">Aguardando login</span>
+            ID do Usuário: <span id="user-id">Aguardando login</span>
         </div>
 
->>>>>>> 26fd5518df3a6e2b48ab4ae32da37f43adade4b7
         <!-- Área de Input do Usuário -->
         <div class="mb-6">
             <label for="prompt-input" class="block text-lg font-medium text-gray-700 mb-2">
@@ -150,11 +88,7 @@
             <textarea id="prompt-input"
                 class="w-full p-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-gemini-blue focus:border-gemini-blue transition duration-150 shadow-inner resize-y"
                 rows="6"
-
                 placeholder="Ex: Crie um plano de treino de 7 dias para corrida de 5km, otimizado com dados recentes de nutrição.">
-
-                placeholder="Ex: Crie um plano de treino de 7 dias para corrida de 5km...">
->>>>>>> 26fd5518df3a6e2b48ab4ae32da37f43adade4b7
             </textarea>
         </div>
 
@@ -172,24 +106,23 @@
 
         <!-- Área de Resultado (Resposta da IA) -->
         <h2 class="text-2xl font-bold text-gray-800 mb-4 pt-4 border-t border-gray-200">
-
-            Resultado Gerado
-
             Resposta Atual
->>>>>>> 26fd5518df3a6e2b48ab4ae32da37f43adade4b7
         </h2>
         <div id="result-container"
              class="bg-gemini-light p-6 rounded-xl border border-blue-200 text-gray-700 whitespace-pre-wrap shadow-inner overflow-x-auto">
             <p id="result-text" class="italic text-gray-500">
-
                 Aguardando seu prompt... Clique em 'Gerar Conteúdo' para começar.
             </p>
         </div>
 
-        <!-- Área para Fontes/Citações -->
-
-                Aguardando seu prompt...
-            </p>
+        <!-- Área para Fontes/Citações (Opcional) -->
+        <div id="sources-area" class="mt-6 hidden">
+            <h3 class="text-xl font-semibold text-gray-700 mb-2">
+                Fontes Utilizadas (Pesquisa Google)
+            </h3>
+            <ul id="sources-list" class="list-none space-y-1 text-sm text-gray-600 pl-0">
+                <!-- As fontes serão inseridas aqui -->
+            </ul>
         </div>
 
         <!-- Área de Histórico (Nova Funcionalidade) -->
@@ -203,21 +136,32 @@
             <!-- Histórico será inserido aqui -->
         </div>
 
-        <!-- Área para Fontes/Citações (Opcional) -->
->>>>>>> 26fd5518df3a6e2b48ab4ae32da37f43adade4b7
-        <div id="sources-area" class="mt-6 hidden">
-            <h3 class="text-xl font-semibold text-gray-700 mb-2">
-                Fontes Utilizadas (Pesquisa Google)
-            </h3>
-            <ul id="sources-list" class="list-none space-y-1 text-sm text-gray-600 pl-0">
-                <!-- As fontes serão inseridas aqui -->
-            </ul>
-        </div>
     </div>
 
+    <!-- ------------------------------------------------------------------ -->
+    <!-- JAVASCRIPT: Lógica de Autenticação, Firestore e Gemini API -->
+    <!-- ------------------------------------------------------------------ -->
+    <script type="module">
+        // Importações obrigatórias do Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, addDoc, onSnapshot, collection, query, serverTimestamp, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        
+        // Ativar log de debug do Firestore (Útil para desenvolvimento)
+        setLogLevel('debug');
 
-    <script>
-        // Variáveis globais para os elementos do DOM
+        // --- Variáveis Globais da Plataforma ---
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        // Variáveis de estado
+        let auth = null;
+        let db = null;
+        let userId = null;
+        let isAuthReady = false;
+
+        // Variáveis do DOM (Repetidas aqui para o escopo do módulo)
         const promptInput = document.getElementById('prompt-input');
         const generateButton = document.getElementById('generate-button');
         const buttonText = document.getElementById('button-text');
@@ -225,6 +169,10 @@
         const resultText = document.getElementById('result-text');
         const sourcesArea = document.getElementById('sources-area');
         const sourcesList = document.getElementById('sources-list');
+        const authStatusSpan = document.getElementById('auth-status');
+        const userIdSpan = document.getElementById('user-id');
+        const historyContainer = document.getElementById('history-container');
+        const historyStatus = document.getElementById('history-status');
 
         // Configuração da API Key (deve ser deixada vazia, a plataforma injeta a chave)
         const apiKey = "";
@@ -238,6 +186,132 @@
             return html;
         }
 
+        // --- Funções do Firestore ---
+
+        // Salva o resultado no Firestore
+        async function saveResult(userPrompt, aiResponse) {
+            if (!db || !userId) {
+                console.error("Firestore não inicializado ou userId ausente.");
+                return;
+            }
+            try {
+                // Caminho da coleção privada do usuário
+                const historyCollection = collection(db, `/artifacts/${appId}/users/${userId}/history`);
+                
+                await addDoc(historyCollection, {
+                    prompt: userPrompt,
+                    response: aiResponse,
+                    timestamp: serverTimestamp() // Adiciona o timestamp do servidor
+                });
+                console.log("Resultado salvo com sucesso no Firestore.");
+            } catch (e) {
+                console.error("Erro ao adicionar documento: ", e);
+            }
+        }
+
+        // Renderiza o histórico na UI
+        function renderHistory(results) {
+            if (results.length === 0) {
+                historyStatus.textContent = "Nenhum histórico encontrado. Gere um prompt para salvar!";
+                return;
+            }
+
+            // Ordena os resultados mais recentes primeiro (em memória, evitando orderBy no Firestore)
+            results.sort((a, b) => b.timestamp - a.timestamp);
+
+            historyContainer.innerHTML = ''; // Limpa o conteúdo anterior
+            historyStatus.textContent = ''; // Limpa o status de carregamento
+
+            results.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'history-item p-4 bg-gray-50 border border-gray-200 rounded-lg transition-shadow shadow-sm hover:shadow-md';
+                itemDiv.innerHTML = `
+                    <p class="text-xs font-semibold text-gemini-blue mb-1">${new Date(item.timestamp).toLocaleTimeString('pt-BR', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}</p>
+                    <p class="text-sm font-medium text-gray-900 truncate">Prompt: ${item.prompt}</p>
+                    <div class="text-xs text-gray-500 mt-2 line-clamp-2">${formatText(item.response)}</div>
+                `;
+                // Adiciona um listener para carregar o histórico na área de resultado principal
+                itemDiv.addEventListener('click', () => {
+                    resultText.innerHTML = formatText(item.response);
+                    promptInput.value = item.prompt;
+                    sourcesArea.classList.add('hidden'); // Limpa as fontes antigas
+                });
+                historyContainer.appendChild(itemDiv);
+            });
+        }
+
+        // Observador de alterações do Firestore
+        function setupHistoryListener() {
+            if (!db || !userId) return;
+            
+            const historyCollection = collection(db, `/artifacts/${appId}/users/${userId}/history`);
+            const q = query(historyCollection);
+            
+            // onSnapshot escuta as alterações em tempo real
+            onSnapshot(q, (snapshot) => {
+                const results = [];
+                snapshot.forEach((doc) => {
+                    // Mapeia os dados do documento, incluindo o ID
+                    const data = doc.data();
+                    results.push({
+                        id: doc.id,
+                        prompt: data.prompt,
+                        response: data.response,
+                        // Converte o timestamp do Firestore para milissegundos JS
+                        timestamp: data.timestamp ? data.timestamp.toMillis() : Date.now()
+                    });
+                });
+                renderHistory(results);
+            }, (error) => {
+                console.error("Erro ao ouvir o histórico do Firestore:", error);
+                historyStatus.textContent = "Erro ao carregar histórico: Verifique a conexão.";
+            });
+        }
+
+        // --- Inicialização da Aplicação ---
+
+        // Inicializa o Firebase e a Autenticação
+        async function initializeFirebase() {
+            try {
+                const app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+                
+                // Trata a autenticação inicial (com token ou anônima)
+                if (initialAuthToken) {
+                    await signInWithCustomToken(auth, initialAuthToken);
+                } else {
+                    await signInAnonymously(auth);
+                }
+
+                // Listener para o estado de autenticação
+                onAuthStateChanged(auth, (user) => {
+                    if (user) {
+                        userId = user.uid;
+                        isAuthReady = true;
+                        authStatusSpan.textContent = "Conectado";
+                        authStatusSpan.classList.remove('text-red-500');
+                        authStatusSpan.classList.add('text-green-600');
+                        userIdSpan.textContent = userId;
+                        
+                        // Inicia a escuta do Firestore APÓS a autenticação
+                        setupHistoryListener();
+                    } else {
+                        // Isso é improvável, pois usamos signInAnonymously
+                        console.warn("Usuário deslogado. Tentando login anônimo.");
+                        signInAnonymously(auth);
+                    }
+                });
+
+            } catch (error) {
+                console.error("Falha ao inicializar o Firebase:", error);
+                authStatusSpan.textContent = "Erro de Conexão";
+                authStatusSpan.classList.remove('text-green-600');
+                authStatusSpan.classList.add('text-red-500');
+                historyStatus.textContent = "Erro de conexão com o Firebase.";
+            }
+        }
+
         // Função principal para chamar a API
         async function generateContent(userQuery) {
             // Configura o estado de carregamento
@@ -249,7 +323,7 @@
             sourcesList.innerHTML = '';
 
             // Configuração do prompt do sistema (opcional, para definir o persona)
-            const systemPrompt = "Você é um assistente de IA prestativo e criativo. Formate suas respostas de forma clara, usando Markdown para cabeçalhos e listas, se apropriado.";
+            const systemPrompt = "Você é um assistente de IA prestativo e criativo, focado em ajudar o usuário a melhorar o foco, a disciplina e a rotina. Formate suas respostas de forma clara, usando Markdown para cabeçalhos e listas, se apropriado.";
 
             const payload = {
                 contents: [{ parts: [{ text: userQuery }] }],
@@ -280,6 +354,11 @@
                     const generatedText = candidate.content.parts[0].text;
                     resultText.innerHTML = formatText(generatedText); // Exibe o texto formatado
 
+                    // Salva o resultado no Firestore
+                    if (isAuthReady) {
+                        await saveResult(userQuery, generatedText);
+                    }
+
                     // Extrai e exibe as fontes de pesquisa (citações)
                     const groundingMetadata = candidate.groundingMetadata;
                     if (groundingMetadata && groundingMetadata.groundingAttributions) {
@@ -294,19 +373,50 @@
                             sourcesArea.classList.remove('hidden');
                             sources.forEach(source => {
                                 const li = document.createElement('li');
-                                li.innerHTML = `<a href="${source.uri}" target="_blank" class="text-gemini-blue hover:underline rounded
+                                li.innerHTML = `<a href="${source.uri}" target="_blank" class="text-gemini-blue hover:underline">${source.title}</a>`;
+                                sourcesList.appendChild(li);
+                            });
+                        }
+                    }
 
-    <script type="module">
-        // Importações obrigatórias do Firebase
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, doc, addDoc, onSnapshot, collection, query, orderBy, serverTimestamp, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-        
-        // Ativar log de debug do Firestore (Útil para desenvolvimento)
-        setLogLevel('debug');
+                } else {
+                    resultText.innerHTML = '<p class="text-red-500">Erro: Não foi possível gerar conteúdo. Tente novamente.</p>';
+                }
 
-        // --- Variáveis Globais da Plataforma ---
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-</script>
+            } catch (error) {
+                console.error("Erro na API ou na rede:", error);
+                resultText.innerHTML = `<p class="text-red-500">Erro: Falha na comunicação com a API Gemini. (${error.message})</p>`;
+            } finally {
+                // Finaliza o estado de carregamento
+                generateButton.disabled = false;
+                buttonText.textContent = "Gerar Conteúdo";
+                loadingSpinner.classList.add('hidden');
+            }
+        }
+
+        // Listener de evento para o botão
+        generateButton.addEventListener('click', () => {
+            const userPrompt = promptInput.value.trim();
+            if (userPrompt) {
+                generateContent(userPrompt);
+            } else {
+                resultText.innerHTML = '<p class="text-orange-500">Por favor, insira um prompt válido.</p>';
+            }
+        });
+
+        // Inicia a aplicação
+        initializeFirebase();
+
+        // Adiciona o Service Worker para suporte PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js').then(registration => {
+                    console.log('ServiceWorker registrado com sucesso: ', registration.scope);
+                }).catch(error => {
+                    console.log('Falha no registro do ServiceWorker: ', error);
+                });
+            });
+        }
+    </script>
 </body>
 </html>
